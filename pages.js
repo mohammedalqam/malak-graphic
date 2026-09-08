@@ -1,8 +1,25 @@
 /* Malak Graphic V2 — shared enhancements */
+const polishSheet=document.createElement('link');
+polishSheet.rel='stylesheet';polishSheet.href='fixes.css?v=20260908b';document.head.appendChild(polishSheet);
+
 const $ = (s,c=document)=>c.querySelector(s);
 const $$ = (s,c=document)=>[...c.querySelectorAll(s)];
 const current = location.pathname.split('/').pop() || 'index.html';
 $$('[data-page]').forEach(a=>a.classList.toggle('active', a.dataset.page===current));
+
+// Keep the universal menu reliable on every page and viewport.
+document.addEventListener('click',e=>{
+  const panel=$('.nav-panel'),toggle=$('.menu-toggle');
+  if(!panel||!toggle||!panel.classList.contains('open')) return;
+  if(panel.contains(e.target)||toggle.contains(e.target)) return;
+  panel.classList.remove('open');toggle.classList.remove('active');toggle.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open');
+});
+document.addEventListener('keydown',e=>{
+  if(e.key!=='Escape')return;
+  const panel=$('.nav-panel'),toggle=$('.menu-toggle');
+  if(panel?.classList.contains('open')){panel.classList.remove('open');toggle?.classList.remove('active');toggle?.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open');}
+});
+
 $$('.filter-btn').forEach(btn=>btn.addEventListener('click',()=>{
   $$('.filter-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active');
   const f=btn.dataset.filter;
