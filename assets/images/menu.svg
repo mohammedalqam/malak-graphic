@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="900" viewBox="0 0 700 900">
+<defs>
+  <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#21162a"/>
+    <stop offset=".55" stop-color="#5f466c"/>
+    <stop offset="1" stop-color="#b8a5bf"/>
+  </linearGradient>
+  <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0">
+    <stop offset="0" stop-color="#ece6ee"/>
+    <stop offset="1" stop-color="#fffdfd"/>
+  </linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#2d1e35" flood-opacity=".18"/>
+  </filter>
+</defs>
+<rect width="100%" height="100%" fill="#25192d"/>
+
+<rect width="700" height="900" fill="#2c1d34"/>
+<circle cx="650" cy="55" r="150" fill="#5b4365"/>
+<rect x="80" y="70" width="540" height="760" rx="28" fill="#fbf8fa" filter="url(#shadow)"/>
+<text x="350" y="155" text-anchor="middle" font-family="Georgia,serif" font-size="42" fill="#302037">Atelier Café</text>
+<text x="350" y="195" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" letter-spacing="4" fill="#8e7e92">MENU</text>
+<line x1="150" y1="230" x2="550" y2="230" stroke="#d7ccd9"/>
+<text x="150" y="290" font-family="Arial,sans-serif" font-size="20" fill="#5a475f">Coffee</text>
+<text x="550" y="290" text-anchor="end" font-family="Arial,sans-serif" font-size="16" fill="#7f7182">₪</text>
+<text x="150" y="345" font-family="Arial,sans-serif" font-size="16" fill="#766a78">Espresso</text><text x="550" y="345" text-anchor="end" font-family="Arial,sans-serif" font-size="16" fill="#766a78">10</text>
+<text x="150" y="390" font-family="Arial,sans-serif" font-size="16" fill="#766a78">Cappuccino</text><text x="550" y="390" text-anchor="end" font-family="Arial,sans-serif" font-size="16" fill="#766a78">16</text>
+<text x="150" y="455" font-family="Arial,sans-serif" font-size="20" fill="#5a475f">Desserts</text>
+<text x="150" y="510" font-family="Arial,sans-serif" font-size="16" fill="#766a78">Cheesecake</text><text x="550" y="510" text-anchor="end" font-family="Arial,sans-serif" font-size="16" fill="#766a78">24</text>
+<text x="150" y="555" font-family="Arial,sans-serif" font-size="16" fill="#766a78">Tiramisu</text><text x="550" y="555" text-anchor="end" font-family="Arial,sans-serif" font-size="16" fill="#766a78">22</text>
+<rect x="150" y="650" width="400" height="92" rx="46" fill="#ece5ee"/>
+<text x="350" y="705" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#4a374f">Designed by Malak Graphic</text>
+
+</svg>

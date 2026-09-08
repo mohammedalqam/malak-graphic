@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="900" viewBox="0 0 700 900">
+<defs>
+  <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#21162a"/>
+    <stop offset=".55" stop-color="#5f466c"/>
+    <stop offset="1" stop-color="#b8a5bf"/>
+  </linearGradient>
+  <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0">
+    <stop offset="0" stop-color="#ece6ee"/>
+    <stop offset="1" stop-color="#fffdfd"/>
+  </linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+    <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#2d1e35" flood-opacity=".18"/>
+  </filter>
+</defs>
+<rect width="100%" height="100%" fill="#f4eff4"/>
+
+<rect width="700" height="900" fill="#e8e0e9"/>
+<rect x="70" y="60" width="560" height="780" rx="30" fill="url(#g1)" filter="url(#shadow)"/>
+<circle cx="530" cy="190" r="120" fill="#b6a2bd" opacity=".35"/>
+<text x="115" y="160" font-family="Arial,sans-serif" font-size="18" fill="#d7c9da">NEW / 2026</text>
+<text x="115" y="340" font-family="Georgia,serif" font-size="88" fill="#fffdfd">Launch</text>
+<text x="115" y="430" font-family="Georgia,serif" font-size="88" fill="#fffdfd">Day.</text>
+<text x="115" y="540" font-family="Arial,sans-serif" font-size="21" fill="#d7c9da">Poster design for a small brand</text>
+<rect x="115" y="650" width="200" height="58" rx="29" fill="#fffdfd"/>
+<text x="215" y="687" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#392641">08.10.2026</text>
+
+</svg>
