@@ -1,12 +1,8 @@
 /* Malak Graphic V2 — shared enhancements */
 const $ = (s,c=document)=>c.querySelector(s);
 const $$ = (s,c=document)=>[...c.querySelectorAll(s)];
-
-// current nav
 const current = location.pathname.split('/').pop() || 'index.html';
 $$('[data-page]').forEach(a=>a.classList.toggle('active', a.dataset.page===current));
-
-// editorial filters
 $$('.filter-btn').forEach(btn=>btn.addEventListener('click',()=>{
   $$('.filter-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active');
   const f=btn.dataset.filter;
@@ -16,8 +12,6 @@ $$('.filter-btn').forEach(btn=>btn.addEventListener('click',()=>{
     if(show) card.animate([{opacity:0,transform:'translateY(14px)'},{opacity:1,transform:'none'}],{duration:420,delay:i*22,easing:'cubic-bezier(.2,.75,.25,1)'});
   });
 }));
-
-// style lab
 const styles={
   minimal:{title:'Minimal',desc:'مساحات نظيفة، تفاصيل قليلة، وخطوط مرتبة. مناسب للي بحب التصميم الهادئ اللي ما يصرخ.',img:'assets/images/wedding-soft.webp'},
   classic:{title:'Classic',desc:'توازن أنيق بين الطابع الكلاسيكي والتفاصيل الناعمة، خصوصًا للدعوات والمناسبات.',img:'assets/images/wedding-classic.webp'},
@@ -33,8 +27,6 @@ $$('.style-tab').forEach(tab=>tab.addEventListener('click',()=>{
   if(img){img.style.opacity='.2';setTimeout(()=>{img.src=item.img;img.alt=`نموذج ستايل ${item.title}`;img.style.opacity='1'},170)}
   if(title) title.textContent=item.title; if(desc) desc.textContent=item.desc;
 }));
-
-// order wizard
 const orderForm=$('#order-wizard');
 if(orderForm){
   let step=1; const max=4;
@@ -59,14 +51,10 @@ if(orderForm){
   });
   $('#prev-step').addEventListener('click',()=>{if(step>1){step--;show()}}); show();
 }
-
-// smart FAQ
 $$('.faq-mode').forEach(btn=>btn.addEventListener('click',()=>{
   $$('.faq-mode').forEach(b=>b.classList.remove('active')); btn.classList.add('active');
   $$('.smart-faq-panel').forEach(p=>p.classList.toggle('active',p.dataset.mode===btn.dataset.mode));
 }));
-
-// project dynamic content
 const projectRoot=$('#project-root');
 if(projectRoot){
   const projects={
@@ -77,10 +65,9 @@ if(projectRoot){
     logo:{title:'Minimal Studio Identity',type:'Logo Design',year:'2026',mood:'Minimal · Elegant · Clear',cover:'assets/images/logo-studio.webp',gallery:['assets/images/logo-studio.webp','assets/images/social-soft.webp','assets/images/greeting.webp'],brief:'هوية بسيطة لمشروع صغير تحتاج شعار واضح وسهل الاستخدام.',story:'الفكرة كانت تقليل العناصر لأقصى حد ممكن بدون فقدان الشخصية. ركزنا على شكل نظيف يشتغل بحجم صغير وكبير وعلى أكثر من خلفية.'}
   };
   const key=new URLSearchParams(location.search).get('p')||'wedding'; const p=projects[key]||projects.wedding;
-  $('#project-title').textContent=p.title; $('#project-type').textContent=p.type; $('#project-year').textContent=p.year; $('#project-mood').textContent=p.mood; $('#project-brief').textContent=p.brief; $('#project-story').textContent=p.story;
+  $('#project-title').textContent=p.title; $('#project-type').textContent=p.type; if($('#project-type-2')) $('#project-type-2').textContent=p.type; $('#project-year').textContent=p.year; $('#project-mood').textContent=p.mood; $('#project-brief').textContent=p.brief; $('#project-story').textContent=p.story;
   const cover=$('#project-cover-img'); cover.src=p.cover; cover.alt=p.title;
   $('#project-gallery').innerHTML=p.gallery.map((src,i)=>`<figure class="reveal in-view"><img src="${src}" alt="${p.title} — عرض ${i+1}" loading="lazy"></figure>`).join('');
   document.title=`${p.title} | Malak Graphic`;
   $$('.project-order').forEach(a=>a.dataset.message=`مرحبا Malak Graphic، عجبني مشروع ${p.title} وبدي تصميم مشابه.`);
-  if(typeof bindContactLinks==='function') bindContactLinks();
 }
